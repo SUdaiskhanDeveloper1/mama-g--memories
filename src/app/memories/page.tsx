@@ -18,7 +18,7 @@ export default async function Memories() {
       <div className="wrap">
         <div className="wall-head">
           <SectionHead title={<T k="wall.title" />} sub={<T k="wall.sub" />} />
-          <Reflection size="sm" sizes="(max-width:900px) 70vw, 300px" />
+          <Reflection size="sm" sizes="(max-width:900px) 70vw, 300px" priority />
         </div>
         <Suspense fallback={null}>
           <MemoryWall memories={memories} />

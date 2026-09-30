@@ -73,5 +73,8 @@ export const MIRROR: Photo = {
   people: ["Col. (R) Dr. Muhammad Safdar Khan"],
 };
 
+/** Every photograph the site shows, in the order worth warming the cache (see ImagePreloader). */
+export const PRELOAD_IMAGES = [MIRROR, ...PHOTOS].map(({ src, thumb, w }) => ({ src, thumb, w }));
+
 export const photosForMemory = (slug: string) => PHOTOS.filter((p) => p.memorySlug === slug);
 export const photoById = (id: string) => PHOTOS.find((p) => p.id === id);

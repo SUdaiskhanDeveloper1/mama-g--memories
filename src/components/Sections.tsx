@@ -121,10 +121,10 @@ export function QuoteGrid({ limit }: { limit?: number }) {
   );
 }
 
-export function Reflection({ size = "md", sizes = "(max-width:700px) 86vw, 460px" }: { size?: "md" | "sm"; sizes?: string }) {
+export function Reflection({ size = "md", sizes = "(max-width:700px) 86vw, 460px", priority = false }: { size?: "md" | "sm"; sizes?: string; priority?: boolean }) {
   return (
     <figure className={`reflect reflect-${size}`}>
-      <div className="reflect-frame"><Img photo={MIRROR} sizes={sizes} /></div>
+      <div className="reflect-frame"><Img photo={MIRROR} sizes={sizes} priority={priority} /></div>
       {MIRROR.caption && <figcaption>{MIRROR.caption}</figcaption>}
     </figure>
   );

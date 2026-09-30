@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import type { Photo } from "@/lib/types";
 import { T, useLang } from "@/lib/i18n";
+import { TILE_SIZES } from "./ImagePreloader";
 
 export const GALLERY_CATEGORIES: Record<string, string> = {
   family: "Family", children: "Children", grandchildren: "Grandchildren", friends: "Friends",
@@ -55,7 +56,7 @@ export function Gallery({ photos, links }: { photos: Photo[]; links: Links }) {
             <button key={p.id} type="button" className="tile" onClick={() => setOpen(i)} aria-label={p.alt ?? p.caption}>
               <img src={p.thumb} width={p.w} height={p.h} alt={p.alt ?? p.caption} loading="lazy" decoding="async" style={{ backgroundColor: p.color }}
                 srcSet={p.thumb && p.thumb !== p.src ? `${p.thumb} 520w, ${p.src} ${p.w}w` : undefined}
-                sizes="(max-width:559px) 92vw, (max-width:759px) 46vw, 380px" />
+                sizes={TILE_SIZES} />
               {p.caption && <span className="tile-cap">{p.caption}</span>}
             </button>
           ))}

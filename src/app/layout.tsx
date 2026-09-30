@@ -3,7 +3,9 @@ import { Newsreader, Hanken_Grotesk, Noto_Naskh_Arabic, Noto_Nastaliq_Urdu } fro
 import { LangProvider } from "@/lib/i18n";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ImagePreloader } from "@/components/ImagePreloader";
 import { SITE } from "@/data/site";
+import { PRELOAD_IMAGES } from "@/data/photos";
 import "./globals.css";
 
 const serif = Newsreader({ subsets: ["latin"], variable: "--font-serif", display: "swap", style: ["normal", "italic"], axes: ["opsz"] });
@@ -46,6 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main id="main">{children}</main>
           <Footer />
         </LangProvider>
+        <ImagePreloader images={PRELOAD_IMAGES} />
       </body>
     </html>
   );

@@ -47,7 +47,7 @@ export function Header() {
     <header className={`hdr${solid || !home ? " solid" : ""}${open ? " open" : ""}`}>
       <div className="hdr-in wrap">
         <Link href="/" className="brand" aria-label="Home">
-          <img className="brand-logo" src="/logo.png" alt="Mama G" width={56} height={56} />
+          <img className="brand-logo" src="/images/logo.webp" alt="Mama G" width={56} height={56} />
         </Link>
 
         <nav className="nav" aria-label="Primary">
