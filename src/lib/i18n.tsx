@@ -384,11 +384,6 @@ export const D = {
     ps: "په انځور کې څوک دي",
   },
   "tell.remove": { en: "Remove", ur: "ہٹائیں", ps: "لرې کړئ" },
-  "tell.video": {
-    en: "Optional video",
-    ur: "اختیاری ویڈیو",
-    ps: "اختیاري ویډیو",
-  },
   "tell.voice": {
     en: "Prefer to speak instead of write? Record your memory.",
     ur: "لکھنے کے بجائے بولنا چاہتے ہیں؟ اپنی یاد ریکارڈ کریں۔",
@@ -462,6 +457,39 @@ export const D = {
     ps: "انځور زیات کړئ",
   },
 
+  "film.kicker": {
+    en: "A Film in His Memory",
+    ur: "ان کی یاد میں ایک فلم",
+    ps: "د هغه په یاد کې یو فلم",
+  },
+  "film.title": {
+    en: "A Life, in Moments",
+    ur: "ایک زندگی، لمحوں میں",
+    ps: "یو ژوند، په شېبو کې",
+  },
+  "film.sub": {
+    en: "From a young officer in uniform to Mamajee in the garden — photographs from across his life, brought together in one short film.",
+    ur: "وردی میں ایک نوجوان افسر سے لے کر باغ میں بیٹھے ماما جی تک — ان کی پوری زندگی کی تصاویر، ایک مختصر فلم میں۔",
+    ps: "په وردۍ کې له یو ځوان افسر نه تر باغ کې ناست ماما جي پورې — د هغه د ټول ژوند انځورونه، په یوه لنډ فلم کې.",
+  },
+  "film.withSound": { en: "With sound", ur: "آواز کے ساتھ", ps: "له غږ سره" },
+  "film.watch": {
+    en: "Watch with Sound",
+    ur: "آواز کے ساتھ دیکھیں",
+    ps: "له غږ سره یې وګورئ",
+  },
+  "film.tapSound": {
+    en: "Tap for sound",
+    ur: "آواز کے لیے ٹیپ کریں",
+    ps: "د غږ لپاره ټک وکړئ",
+  },
+  "film.play": { en: "Play film", ur: "فلم چلائیں", ps: "فلم پیل کړئ" },
+  "film.pause": { en: "Pause film", ur: "فلم روکیں", ps: "فلم ودروئ" },
+  "film.unmute": { en: "Turn sound on", ur: "آواز کھولیں", ps: "غږ پرانیزئ" },
+  "film.mute": { en: "Turn sound off", ur: "آواز بند کریں", ps: "غږ بند کړئ" },
+  "film.full": { en: "Full screen", ur: "پوری اسکرین", ps: "بشپړه پرده" },
+  "film.seek": { en: "Film position", ur: "فلم کا مقام", ps: "د فلم ځای" },
+
   "poetry.title": {
     en: "His Words & The Words Written For Him",
     ur: "ان کے الفاظ اور ان کے لیے لکھے گئے الفاظ",
@@ -488,6 +516,11 @@ export const D = {
     en: "A living archive of memory, kept by his family.",
     ur: "یادوں کا زندہ آرکائیو، خاندان کی نگرانی میں۔",
     ps: "د یادونو ژوندی آرشیف، د کورنۍ په ساتنه.",
+  },
+  "footer.contact": {
+    en: "For any queries or suggestions, please contact us at",
+    ur: "کسی بھی سوال یا تجویز کے لیے ہم سے رابطہ کریں:",
+    ps: "د هرې پوښتنې یا وړاندیز لپاره موږ سره اړیکه ونیسئ:",
   },
   "footer.admin": {
     en: "Family sign-in",

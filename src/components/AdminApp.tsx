@@ -43,7 +43,7 @@ export function AdminApp() {
 }
 
 function Notice({ title, children }: { title: string; children: React.ReactNode }) {
-  return <div className="notice"><h2 className="h4">{title}</h2><p>{children}</p></div>;
+  return <div className="notice"><h2 className="h4">{title}</h2><div className="notice-body">{children}</div></div>;
 }
 
 function Login() {

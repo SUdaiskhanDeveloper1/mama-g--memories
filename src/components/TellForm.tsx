@@ -24,7 +24,6 @@ export function TellForm() {
   const { t, lang } = useLang();
   const [pics, setPics] = useState<Pic[]>([]);
   const [voice, setVoice] = useState<File | null>(null);
-  const [video, setVideo] = useState<File | null>(null);
   const [cats, setCats] = useState<string[]>([]);
   const [drag, setDrag] = useState(false);
   const [state, setState] = useState<"idle" | "sending" | "done" | "demo" | "error">("idle");
@@ -81,9 +80,7 @@ export function TellForm() {
         });
       }
       let audio_url: string | null = null;
-      let video_url: string | null = null;
       if (voice) { setProgress("Voice memory"); audio_url = await put("media", `${id}/voice.${voice.name.split(".").pop() || "webm"}`, voice); }
-      if (video) { setProgress("Video"); video_url = await put("media", `${id}/video.${video.name.split(".").pop() || "mp4"}`, video); }
 
       setProgress("Saving");
       const title = String(f.get("title") || "").trim();
@@ -103,7 +100,6 @@ export function TellForm() {
         quote: String(f.get("quote") || "").trim() || null,
         photos,
         audio_url,
-        video_url,
         is_private: f.get("private") === "on",
         consent: true,
         status: "pending",
@@ -127,7 +123,7 @@ export function TellForm() {
         {state === "done" && <p className="lede">{t("tell.review")}</p>}
         {state === "demo" && <p className="form-err">Preview mode: the database is not connected yet, so this memory was not saved. Add the Supabase keys to enable real submissions.</p>}
         <div className="row center-row">
-          <button type="button" className="btn btn-line" onClick={() => { setState("idle"); setPics([]); setVoice(null); setVideo(null); setCats([]); form.current?.reset(); }}>{t("tell.another")}</button>
+          <button type="button" className="btn btn-line" onClick={() => { setState("idle"); setPics([]); setVoice(null); setCats([]); form.current?.reset(); }}>{t("tell.another")}</button>
           <Link href="/memories" className="btn btn-gold">{t("wall.allMemories")}</Link>
         </div>
       </div>
@@ -206,17 +202,9 @@ export function TellForm() {
 
       <section className="block">
         <VoiceRecorder value={voice} onChange={setVoice} />
-        <label className="field"><span>{t("tell.video")} <small>(≤ 50 MB)</small></span>
-          <input type="file" accept="video/*" onChange={(e) => { const v = e.target.files?.[0] ?? null; if (v && v.size > 50 * MB) { setMsg("Video must be under 50 MB."); e.currentTarget.value = ""; return; } setVideo(v); }} />
-        </label>
       </section>
 
       <label className="field"><span>{t("tell.quote")}</span><input name="quote" maxLength={300} dir="auto" /></label>
-
-      <div className="checks">
-        <label className="check"><input type="checkbox" name="consent" required /> <span>{t("tell.consent")}</span></label>
-        <label className="check"><input type="checkbox" name="private" /> <span>{t("tell.private")}</span></label>
-      </div>
 
       {msg && <p className="form-err" role="alert">{msg}</p>}
       <button className="btn btn-gold btn-lg" disabled={busy}>{busy ? `${t("tell.sending")} ${progress}` : t("tell.submit")}</button>

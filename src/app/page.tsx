@@ -7,6 +7,7 @@ import { allMemories } from "@/lib/all";
 import { Img } from "@/components/Img";
 import { Reveal } from "@/components/Reveal";
 import { Byline } from "@/components/MemoryCard";
+import { Film } from "@/components/Film";
 import { ContributorGrid, CtaBlock, Featured, FinalBlock, LessonCards, QuoteGrid, Reflection, SectionHead, SidesGrid } from "@/components/Sections";
 
 export const revalidate = 60;
@@ -53,6 +54,12 @@ export default async function Home() {
             </p>
             <Byline m={{ contributor: "Mumtaz Ali Khan", relationship: "Nephew" }} />
           </Reveal>
+        </div>
+      </section>
+
+      <section className="section film-sec" id="film">
+        <div className="wrap">
+          <Film />
         </div>
       </section>
 

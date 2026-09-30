@@ -4,6 +4,7 @@ import { T } from "@/lib/i18n";
 import { allMemories, allPhotos } from "@/lib/all";
 import { Gallery } from "@/components/Gallery";
 import { SectionHead } from "@/components/Sections";
+import { Film } from "@/components/Film";
 
 export const revalidate = 60;
 export const metadata: Metadata = {
@@ -18,6 +19,9 @@ export default async function GalleryPage() {
     <div className="page">
       <div className="wrap">
         <SectionHead title={<T k="gallery.title" />} sub={<T k="gallery.sub" />} />
+        <div className="film-card">
+          <Film card />
+        </div>
         <Suspense fallback={null}>
           <Gallery photos={photos} links={links} />
         </Suspense>

@@ -10,6 +10,7 @@ export function Footer() {
           <p className="ftr-name">{SITE.person}</p>
           <p className="ftr-dates">{SITE.born} — {SITE.passed}</p>
           <p className="ftr-line"><T k="footer.line" /></p>
+          <p className="ftr-contact"><T k="footer.contact" /> <a href="tel:+923153633503" dir="ltr"><b>0315-3633503</b></a>.</p>
         </div>
         <nav aria-label="Footer">
           <Link href="/life"><T k="nav.life" /></Link>
